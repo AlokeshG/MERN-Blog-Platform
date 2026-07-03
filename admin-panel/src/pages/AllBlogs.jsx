@@ -12,7 +12,11 @@ function AllBlogs() {
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
-
+  const imageUrl = blog.image
+    ? blog.image.startsWith("http")
+      ? blog.image
+      : `${import.meta.env.VITE_API_URL.replace("/api", "")}/uploads/${blog.image}`
+    : "";
   const [loading, setLoading] = useState(true);
 
   const fetchBlogs = async () => {
@@ -136,7 +140,7 @@ function AllBlogs() {
             >
               {blog.image && (
                 <img
-                  src={blog.image}
+                  src={imageUrl}
                   className="card-img-top"
                   alt={blog.title}
                   style={{
