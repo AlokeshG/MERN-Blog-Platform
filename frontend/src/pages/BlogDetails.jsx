@@ -35,7 +35,11 @@ function BlogDetails() {
   }
 
   // Cloudinary Image URL
-  const imageUrl = blog.image || "";
+const imageUrl = blog.image
+  ? blog.image.startsWith("http")
+    ? blog.image
+    : `${import.meta.env.VITE_API_URL.replace("/api", "")}/uploads/${blog.image}`
+  : "";
 
   const canonical =
     blog.canonicalUrl ||
