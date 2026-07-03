@@ -136,3 +136,14 @@ PORT=5000
 
 GitHub:
 https://github.com/AlokeshG
+
+Public Website Link:
+https://mern-blog-platform-mocha.vercel.app/
+
+Admin-panel Link:
+https://mern-blog-platform-yomo.vercel.app/admin
+email: admin@gmail.com
+password: Admin@123
+
+Backend Link:
+https://mern-blog-platform-6rmd.onrender.com/
