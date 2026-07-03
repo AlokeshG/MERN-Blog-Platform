@@ -141,7 +141,7 @@ Public Website Link:
 https://mern-blog-platform-mocha.vercel.app/
 
 Admin-panel Link:
-https://mern-blog-platform-yomo.vercel.app/admin
+https://mern-blog-platform-yomo.vercel.app/
 email: admin@gmail.com
 password: Admin@123
 
