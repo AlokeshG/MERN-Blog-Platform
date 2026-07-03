@@ -35,7 +35,7 @@ function BlogDetails() {
   }
 
   const imageUrl = blog.image
-    ? `http://localhost:5000/uploads/${blog.image}`
+    ? `https://mern-blog-platform-6rmd.onrender.com/uploads/${blog.image}`
     : "";
 
   const canonical =

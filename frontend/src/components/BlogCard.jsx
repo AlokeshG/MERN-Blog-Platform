@@ -6,7 +6,7 @@ function BlogCard({ blog }) {
 
             {blog.image && (
                 <img
-                    src={`http://localhost:5000/uploads/${blog.image}`}
+                    src={`https://mern-blog-platform-6rmd.onrender.com/uploads/${blog.image}`}
                     className="card-img-top img-fluid"
                     alt={blog.title}
                     style={{
