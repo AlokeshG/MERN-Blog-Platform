@@ -136,7 +136,7 @@ function AllBlogs() {
             >
               {blog.image && (
                 <img
-                  src={`http://localhost:5000/uploads/${blog.image}`}
+                  src={blog.image}
                   className="card-img-top"
                   alt={blog.title}
                   style={{
@@ -182,9 +182,7 @@ function AllBlogs() {
                 <p className="text-muted mt-3">
                   Created:{" "}
                   {blog.createdAt
-                    ? new Date(
-                        blog.createdAt
-                      ).toLocaleDateString()
+                    ? new Date(blog.createdAt).toLocaleDateString()
                     : "N/A"}
                 </p>
 

@@ -34,9 +34,8 @@ function BlogDetails() {
     );
   }
 
-  const imageUrl = blog.image
-    ? `https://mern-blog-platform-6rmd.onrender.com/uploads/${blog.image}`
-    : "";
+  // Cloudinary Image URL
+  const imageUrl = blog.image || "";
 
   const canonical =
     blog.canonicalUrl ||
@@ -44,9 +43,7 @@ function BlogDetails() {
 
   return (
     <UserLayout>
-
       <Helmet>
-
         <title>
           {blog.seoTitle || blog.title}
         </title>
@@ -65,7 +62,6 @@ function BlogDetails() {
         />
 
         {/* Open Graph */}
-
         <meta
           property="og:title"
           content={
@@ -96,7 +92,6 @@ function BlogDetails() {
         />
 
         {/* Twitter */}
-
         <meta
           name="twitter:card"
           content="summary_large_image"
@@ -125,11 +120,9 @@ function BlogDetails() {
             blog.twitterImage || imageUrl
           }
         />
-
       </Helmet>
 
       <div className="container mt-5">
-
         <button
           className="btn btn-secondary mb-4"
           onClick={() => navigate("/")}
@@ -153,7 +146,6 @@ function BlogDetails() {
         <h1>{blog.title}</h1>
 
         <div className="mb-3">
-
           <span className="badge bg-primary me-2">
             {blog.category}
           </span>
@@ -161,7 +153,6 @@ function BlogDetails() {
           <span className="badge bg-success">
             {blog.status}
           </span>
-
         </div>
 
         <p className="text-muted">
@@ -179,9 +170,7 @@ function BlogDetails() {
         <CommentSection
           blogId={blog._id}
         />
-
       </div>
-
     </UserLayout>
   );
 }

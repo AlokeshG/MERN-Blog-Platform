@@ -45,14 +45,8 @@ function EditBlog() {
       );
 
       setSeoTitle(res.data.seoTitle || "");
-
-      setSeoDescription(
-        res.data.seoDescription || ""
-      );
-
-      setStatus(
-        res.data.status || "published"
-      );
+      setSeoDescription(res.data.seoDescription || "");
+      setStatus(res.data.status || "published");
 
       setLoading(false);
     } catch (error) {
@@ -75,18 +69,13 @@ function EditBlog() {
         JSON.stringify(
           tags
             .split(",")
-            .map(tag => tag.trim())
-            .filter(tag => tag !== "")
+            .map((tag) => tag.trim())
+            .filter((tag) => tag !== "")
         )
       );
 
       formData.append("seoTitle", seoTitle);
-
-      formData.append(
-        "seoDescription",
-        seoDescription
-      );
-
+      formData.append("seoDescription", seoDescription);
       formData.append("status", status);
 
       if (image) {
@@ -100,10 +89,7 @@ function EditBlog() {
       });
 
       toast.success("Blog Updated Successfully");
-
       navigate("/blogs");
-      // If your All Blogs page is "/allblogs",
-      // replace "/" with "/allblogs"
 
     } catch (error) {
       console.log(error);
@@ -120,7 +106,6 @@ function EditBlog() {
 
       {/* Header */}
       <div className="d-flex align-items-center mb-4">
-
         <button
           className="btn btn-outline-secondary me-3"
           onClick={() => navigate(-1)}
@@ -129,7 +114,6 @@ function EditBlog() {
         </button>
 
         <h2 className="mb-0">✏ Edit Blog</h2>
-
       </div>
 
       <div className="card shadow p-4">
@@ -148,8 +132,8 @@ function EditBlog() {
           />
         </div>
 
+        {/* Category */}
         <div className="mb-3">
-
           <label className="form-label fw-bold">
             Category
           </label>
@@ -159,21 +143,15 @@ function EditBlog() {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-
             <option>Technology</option>
-
             <option>Programming</option>
-
             <option>AI</option>
-
             <option>Web Development</option>
-
           </select>
-
         </div>
 
+        {/* Tags */}
         <div className="mb-3">
-
           <label className="form-label fw-bold">
             Tags
           </label>
@@ -184,7 +162,6 @@ function EditBlog() {
             onChange={(e) => setTags(e.target.value)}
             placeholder="react,node,mongodb"
           />
-
         </div>
 
         {/* Current Image */}
@@ -198,7 +175,7 @@ function EditBlog() {
             <br />
 
             <img
-              src={`http://localhost:5000/uploads/${currentImage}`}
+              src={currentImage}
               alt="Blog"
               className="img-thumbnail"
               style={{
@@ -213,7 +190,6 @@ function EditBlog() {
 
         {/* Upload New Image */}
         <div className="mb-4">
-
           <label className="form-label fw-bold">
             Change Image
           </label>
@@ -224,12 +200,10 @@ function EditBlog() {
             accept="image/*"
             onChange={(e) => setImage(e.target.files[0])}
           />
-
         </div>
 
         {/* CKEditor */}
         <div className="mb-4">
-
           <label className="form-label fw-bold">
             Blog Content
           </label>
@@ -241,7 +215,6 @@ function EditBlog() {
               setContent(editor.getData());
             }}
           />
-
         </div>
 
         <hr />
@@ -251,7 +224,6 @@ function EditBlog() {
         </h4>
 
         <div className="mb-3">
-
           <label className="form-label fw-bold">
             SEO Title
           </label>
@@ -261,11 +233,9 @@ function EditBlog() {
             value={seoTitle}
             onChange={(e) => setSeoTitle(e.target.value)}
           />
-
         </div>
 
         <div className="mb-3">
-
           <label className="form-label fw-bold">
             SEO Description
           </label>
@@ -275,12 +245,10 @@ function EditBlog() {
             className="form-control"
             value={seoDescription}
             onChange={(e) => setSeoDescription(e.target.value)}
-          ></textarea>
-
+          />
         </div>
 
         <div className="mb-4">
-
           <label className="form-label fw-bold">
             Status
           </label>
@@ -290,7 +258,6 @@ function EditBlog() {
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           >
-
             <option value="published">
               Published
             </option>
@@ -298,9 +265,7 @@ function EditBlog() {
             <option value="draft">
               Draft
             </option>
-
           </select>
-
         </div>
 
         {/* Button */}
@@ -312,7 +277,6 @@ function EditBlog() {
         </button>
 
       </div>
-
     </div>
   );
 }

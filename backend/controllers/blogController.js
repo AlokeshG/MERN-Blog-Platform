@@ -9,7 +9,7 @@ exports.createBlog = async (req, res) => {
 
     const data = {
       ...req.body,
-      image: req.file ? req.file.filename : "",
+      image: req.file ? req.file.path : "",
     };
 
     // Generate SEO Slug
@@ -111,7 +111,7 @@ exports.updateBlog = async (req, res) => {
 
     // Update image only if a new one is uploaded
     if (req.file) {
-      data.image = req.file.filename;
+      data.image = req.file.path;
     }
 
     const blog = await Blog.findByIdAndUpdate(
